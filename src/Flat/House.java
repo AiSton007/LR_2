@@ -38,5 +38,6 @@ public class House extends Realty implements FlatInterface {
                 ", Цена за кв.метр=" + pricePerSquareMeter +
                 "} " + super.toString();
     }
+
 }
 

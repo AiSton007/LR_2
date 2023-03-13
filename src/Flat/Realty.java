@@ -1,6 +1,8 @@
 package Flat;
 
- /**
+import java.util.Objects;
+
+/**
  * Абстрактный класс, описывающий объект недвижимости
  */
 public abstract class Realty implements FlatInterface {
@@ -46,5 +48,16 @@ public abstract class Realty implements FlatInterface {
                 ", площадь=" + area +
                 '}';
     }
+     @Override
+     public boolean equals(Object o) {
+         if (this == o) return true;
+         if (o == null || getClass() != o.getClass()) return false;
+         Realty realty = (Realty) o;
+         return area == realty.area && Objects.equals(address, realty.address);
+     }
+     @Override
+     public int hashCode() {
+         return Objects.hash(address, area);
+     }
 
 }
